@@ -1,95 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "whole-body-tracking"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = "~=3.11.0"
+requires-python = ">=3.6,<3.9"
 dependencies = [
-    "annotated-types==0.7.0",
-    "certifi==2025.8.3",
-    "charset-normalizer==3.4.3",
-    "click==8.2.1",
-    "datasets>=4.0.0",
-    "gitdb==4.0.12",
-    "gitpython==3.1.45",
-    "h5py>=3.14.0",
-    "huggingface-hub>=0.34.4",
-    "idna==3.10",
-    "isaaclab",
-    "isaacsim",
-    "isaacsim-extscache-kit==5.0.0.0",
-    "ml-dtypes==0.5.3",
-    "omniverse-kit>=107.3.1.206797",
-    "packaging==25.0",
-    "pandas>=2.3.2",
-    "platformdirs==4.4.0",
-    "psutil==7.0.0",
-    "pydantic==2.11.7",
-    "pydantic-core==2.33.2",
-    "pyyaml==6.0.2",
-    "requests==2.32.5",
-    "rsl-rl-lib",
-    "sentry-sdk==2.37.1",
-    "smmap==5.0.2",
-    "typing-extensions==4.15.0",
-    "typing-inspection==0.4.1",
-    "urllib3==2.5.0",
-    "wandb==0.21.3",
+  "certifi",
+  "charset-normalizer",
+  "click",
+  "datasets",
+  "gitpython",
+  "h5py",
+  "huggingface-hub",
+  "idna",
+  "ml-dtypes",
+  "packaging",
+  "pandas",
+  "platformdirs",
+  "psutil",
+  "pydantic",
+  "pydantic-core",
+  "pyyaml",
+  "requests",
+  "sentry-sdk",
+  "smmap",
+  "typing-extensions",
+  "urllib3",
+  "wandb",
+  "numpy",
+  "scipy",
 ]
+
 [tool.uv.sources]
 whole_body_tracking = { path = "/workspace/whole_body_tracking/source/whole_body_tracking" }
 rsl-rl-lib = { git = "ssh://git@github.com/leggedrobotics/rsl_rl.git", tag = "v3.0.1" }
-isaacsim = { git = "ssh://git@github.com/ra312/IsaacSim.git" }
 
+
+
+# Index definitions
 [[tool.uv.index]]
 name = "nvidia"
 url = "https://pypi.nvidia.com/simple"
 
-dependencies = [
-    "torch",
-    "torchvision",
-    "boto3==1.40.27",
-    "botocore==1.40.27",
-    "contourpy==1.3.2",
-    "cycler==0.12.1",
-    "fonttools==4.59.2",
-    "isaacsim==4.5.0.0",
-    "isaacsim-app==4.5.0.0",
-    "isaacsim-asset==4.5.0.0",
-    "isaacsim-benchmark==4.5.0.0",
-    "isaacsim-code-editor==4.5.0.0",
-    "isaacsim-core==4.5.0.0",
-    "isaacsim-cortex==4.5.0.0",
-    "isaacsim-example==4.5.0.0",
-    "isaacsim-extscache-kit-sdk==4.5.0.0",
-    "isaacsim-extscache-physics==4.5.0.0",
-    "isaacsim-gui==4.5.0.0",
-    "isaacsim-kernel==4.5.0.0",
-    "isaacsim-replicator==4.5.0.0",
-    "isaacsim-rl==4.5.0.0",
-    "isaacsim-robot==4.5.0.0",
-    "isaacsim-robot-motion==4.5.0.0",
-    "isaacsim-robot-setup==4.5.0.0",
-    "isaacsim-ros1==4.5.0.0",
-    "isaacsim-ros2==4.5.0.0",
-    "isaacsim-sensor==4.5.0.0",
-    "isaacsim-storage==4.5.0.0",
-    "isaacsim-template==4.5.0.0",
-    "isaacsim-test==4.5.0.0",
-    "isaacsim-utils==4.5.0.0",
-    "jmespath==1.0.1",
-    "kiwisolver==1.4.9",
-    "matplotlib==3.10.6",
-    "omniverse-kit==106.5.0.162521",
-    "opencv-python==4.11.0.86",
-    "osqp==0.6.7.post3",
-    "pyparsing==3.2.3",
-    "pyperclip==1.9.0",
-    "qdldl==0.1.7.post5",
-    "s3transfer==0.14.0",
-    "scipy==1.15.3",
-]
-
-
-
-
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
